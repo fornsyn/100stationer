@@ -1,0 +1,1094 @@
+/* Apply the background color */
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #464969; /* Background color */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-size: 12px; /* Adjust size globally if needed */
+  /* Ensure consistent color rendering across all elements */
+  color-adjust: exact; /* Forces browsers to apply consistent color handling */
+  -webkit-print-color-adjust: exact; /* Webkit-based browsers */
+  print-color-adjust: exact; /* For modern browsers */
+}
+
+img {
+  image-rendering: auto;
+  filter: none !important;
+  -webkit-filter: none !important;
+  image-rendering: crisp-edges; /* Force Firefox to display pixelated edges */
+  /* Ensures that the images are treated the same as background colors */
+  color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body, html {
+  overflow: hidden;
+  height: 100%;
+}
+
+#wrapper {
+  position: absolute; /* Cover the entire viewport */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the viewport */
+  height: 100%; /* Full height of the viewport */
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  transform: scale(1); /* Initial scale */
+  transition: transform 0.2s; /* Smooth transition for scaling */
+}
+
+
+
+
+
+
+
+/* Start Screen Styles */
+#startScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #464969;
+  position: absolute; /* Use absolute positioning to keep it in view */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the start screen */
+  width: 1600px; /* Lock width to 1600px */
+  height: 1200px; /* Lock height to 1200px */
+  margin: 0; /* No auto margin here */
+  overflow: hidden;
+}
+
+/* Start Menu Box */
+#menuBox {
+  width: 600px;
+  height: 800px;
+  position: relative;
+  margin: auto;
+}
+
+
+
+@media (max-width: 900px) and (orientation: portrait) {
+  #startScreen {
+    transform: translate(-50%, -50%) scale(2.7);
+  }
+}
+
+
+/* Instructions Box Positioning */
+#instructionsBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3; /* Overlay on top of everything */
+}
+
+
+/* OK Button inside Instructions Box */
+#okBtn {
+  position: absolute;
+  bottom: 170px; /* Adjust for positioning inside the box */
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#okImg {
+  width: 160px;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Invisible Button Elements positioned using percentages of the locked 1600x1200 resolution */
+#instructionsBtn, #settingsBtn, #startGameBtn {
+  position: absolute;
+  background-color: transparent;/* Semi-transparent red for visibility */
+  border: none;
+  cursor: pointer;
+}
+
+/* Button Positions (using percentage values based on the menuBox dimensions) */
+#instructionsBtn {
+  width: 16%; /* 272px / 600px */
+  height: 6.3%; /* 91px / 800px */
+  left: 50%;
+  top: 49.5%; /* 250px / 800px */
+  transform: translateX(-50%);
+}
+
+#settingsBtn {
+  width: 16%; /* 272px / 600px */
+  height: 6.3%; /* 91px / 800px */
+  left: 50%;
+  top: 58.2%; /* 250px / 800px */
+  transform: translateX(-50%);
+}
+
+#startGameBtn {
+  width: 25.4%; /* 430px / 600px */
+  height: 8.4%; /* 130px / 800px */
+  left: 50%;
+  top: 67%; /* 550px / 800px */
+  transform: translateX(-50%);
+}
+
+.hidden {
+  opacity: 0;
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Settings Box Positioning */
+#settingsBox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+
+
+#soundToggleBtn {
+  position: absolute;
+  top: 36%; /* Adjust as needed */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px; /* Adjust based on your image */
+  height: 150px; /* Adjust based on your image */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Sound Toggle Image */
+#soundToggleImg {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+#timerToggleBtn {
+  position: absolute;
+  top: 55%; /* Position it similar to the OK button, you can adjust this */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px; /* Adjust based on your image */
+  height: 150px; /* Adjust based on your image */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Timer Toggle Image */
+#timerToggleImg {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+/* OK Button inside Settings Box */
+#okSettingsBtn {
+  position: absolute;
+  bottom: 170px; /* Adjust for positioning inside the box */
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#okSettingsImg {
+  width: 160px;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Fade-out effect */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease; /* 0.4s for a smooth transition */
+}
+
+/* Fade-in effect */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.4s ease; /* 0.4s for a smooth transition */
+}
+
+
+/* Hidden class */
+.hidden {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+/* Game Screen Styles */
+#gameContainer {
+  display: none; /* Initially hide the game screen */
+  width: 1430px; /* Lock width to 1600px */
+  height: 3000px; /* Lock height to 1200px */
+  margin: 0 auto;
+  background-color: #464969;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute; /* Use absolute positioning to control placement */
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1);
+  overflow: hidden; /* Prevents scrolling within the gameContainer */
+  z-index: 1;
+}
+
+
+
+
+
+/* Map Container Styles */
+#mapContainer {
+  width: 1600px; /* Lock map container width */
+  height: 1200px; /* Lock map container height */
+  position: absolute;
+  transform: scale(0.9);
+  transform-origin: center;
+  margin-top: 70px;
+  top: 550px;
+  left: 20;
+  z-index: 2; /* Ensure the map is on top */
+}
+
+/* Map Styles */
+#map {
+  width: 100%; /* Fill the map container */
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease; /* Smooth zoom transition */
+}
+
+/* Bright Images */
+.bright-image {
+  position: absolute;
+  z-index: 1;
+  transform: scale(0.8);
+  transform-origin: center;
+}
+
+/* Station Text */
+.station-text {
+  position: absolute;
+  z-index: 3;
+  transform-origin: 0% 50%;
+  transform: translate(0%, -50%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* UI Container */
+#uiContainer {
+  position: absolute; /* Ensure it stays on top of the map */
+  bottom: 110px; /* Adjust to position inside the game container */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 4; /* Ensure it stays above other elements */
+}
+
+
+
+
+
+
+
+#timerContainer {
+  position: absolute;
+  top: -966px; /* Adjust positioning based on the screen layout */
+  right: 53%; /* Positioning on the top-right of the screen */
+  transform: translateX(50%);
+  width: 300px; /* Adjust size based on the PNG frame */
+  height: 380px;
+  z-index: 5; /* Ensure it is above other elements */
+  transform: scale(1.2);
+  transform-origin: center center;
+}
+
+#timerFrame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#timerDisplay {
+  position: absolute;
+  top: 28.7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 35px; /* Adjust size for visibility */
+  color: #b6f5db;
+  z-index: 2; /* Ensure the timer text is above the frame */
+}
+
+
+
+
+
+
+
+
+
+#counterContainer {
+  position: absolute;
+  top: -1000px; /* Adjust positioning based on the screen layout */
+  right: 120%; /* Positioning on the top-right of the screen */
+  transform: translateX(50%);
+  width: 300px; /* Adjust size based on the PNG frame */
+  height: 350px;
+  z-index: 5; /* Make sure it's on top */
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+#counterFrame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#counterText {
+  position: absolute;
+  top: 74%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the text in the frame */
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 32px;
+  color: #b6f5db; /* The light green color you requested */
+  z-index: 6; /* Ensure the text is above the frame */
+}
+
+/* Blue Line Counter */
+#blueCounterContainer {
+  position: absolute;
+  top: -918px; /* Adjust this for proper placement */
+  right: 130%; /* Adjust based on layout */
+  transform: translateX(50%);
+  width: 300px;
+  height: 350px;
+  z-index: 5;
+}
+
+#blueCounterText {
+  position: absolute;
+  top: -6%;
+  left: 17%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 35px;
+  color: #5c8ba8; /* Blue color */
+  z-index: 6;
+}
+
+/* Green Line Counter */
+#greenCounterContainer {
+  position: absolute;
+  top: -908px; /* Adjust this for proper placement */
+  right: 130%;
+  transform: translateX(50%);
+  width: 300px;
+  height: 350px;
+  z-index: 5;
+}
+
+#greenCounterText {
+  position: absolute;
+  top: 9.5%;
+  left: 17%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 35px;
+  color: #51a276; /* Green color */
+  z-index: 6;
+}
+
+/* Red Line Counter */
+#redCounterContainer {
+  position: absolute;
+  top: -898px; /* Adjust this for proper placement */
+  right: 130%;
+  transform: translateX(50%);
+  width: 300px;
+  height: 350px;
+  z-index: 5;
+}
+
+#redCounterText {
+  position: absolute;
+  top: 25%;
+  left: 17%;;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 35px;
+  color: #bb4e59; /* Red color */
+  z-index: 6;
+}
+
+
+
+
+
+
+
+
+
+
+#timeUpOverlay {
+  position: fixed;
+  top: -2600%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+
+/* Time-up image styling */
+#timeUpImage {
+  width: 600px;
+  height: 800px;
+}
+
+
+
+/* Main Counter for Time Up */
+#timeUpCounterText {
+  position: absolute;
+  top: 57.2%; /* Adjust as needed for the end image */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 40px;
+  color: #b6f5db; /* Light green color */
+  z-index: 10; /* Ensure it's above the end image */
+}
+
+/* Blue Line Counter for Time Up */
+#timeUpBlueCounterText {
+  position: absolute;
+  top: 32%; /* Adjust based on end image positioning */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+  color: #5c8ba8; /* Blue color */
+  z-index: 10;
+}
+
+/* Green Line Counter for Time Up */
+#timeUpGreenCounterText {
+  position: absolute;
+  top: 40%; /* Adjust based on end image positioning */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+  color: #51a276; /* Green color */
+  z-index: 10;
+}
+
+/* Red Line Counter for Time Up */
+#timeUpRedCounterText {
+  position: absolute;
+  top: 47.3%; /* Adjust based on end image positioning */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 30px;
+  color: #bb4e59; /* Red color */
+  z-index: 10;
+}
+
+
+.endScreenButton {
+  position: absolute;
+  width: 140px;
+  height: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 11;
+}
+
+#timeUpRevealButton {
+  bottom: 27%;
+  right: 30%;
+  width: 240px;
+  height: 73px;
+  background: red;
+  opacity: 0;
+}
+
+#timeUpReturnButton {
+  bottom: 12%;
+  right: 17%;
+  width: 395px;
+  height: 95px;
+  background: red;
+  opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+#finishedGameOverlay {
+  position: fixed;
+  top: -2600%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transform: scale(1.2);
+  transform-origin: center;
+}
+
+/* Finished game image styling */
+#finishedGameImage {
+  width: 600px;
+  height: 800px;
+}
+
+.finishedGameButton {
+  position: absolute;
+  width: 140px;
+  height: auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 11;
+}
+
+#finishedGameReturnButton {
+  bottom: 12%;
+  right: 17%;
+  width: 395px;
+  height: 95px;
+  background: red;
+  opacity: 0; /* Keeps button clickable without visible background */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#soundToggleGame {
+  position: absolute;
+  bottom: 916px; 
+  right: -190px;  /* Adjusted to place next to return button */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  transform: scale(2);
+  transform-origin: center;
+}
+
+
+
+
+
+
+
+
+
+#helpBtn {
+  position: absolute;
+  bottom: 910px; 
+  right: -360px;  /* Adjusted to place next to return button */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  transform: scale(2);
+  transform-origin: center;
+}
+
+#helpBtnImg {
+  width: 77px;
+  height: 68px;
+}
+
+
+/* Game Screen Help Infobox Positioning */
+#gameHelpBox {
+  position: fixed;
+  top: -2500%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transform: scale(2);
+  transform-origin: center;
+}
+
+/* OK Button inside Game Help Infobox */
+#gameHelpOkBtn {
+  position: absolute;
+  bottom: 170px; /* Same positioning as the start screen */
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#gameHelpOkImg {
+  width: 160px;
+  height: 100px;
+}
+
+
+
+
+
+
+
+
+/* Return Button */
+#returnBtn {
+  position: absolute;
+  bottom: 910px; 
+  right: -30px;  /* Adjusted to place next to return button */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  transform: scale(2);
+  transform-origin: center;
+}
+
+#returnBtnImg {
+  width: 77px;
+  height: 68px;
+}
+
+
+/* Return Confirmation Box */
+#returnMenuBox {
+  position: fixed;
+  top: -2500%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transform: scale(2);
+  transform-origin: center;
+}
+
+#returnMenuBox img {
+  width: 600px;
+  height: 800px;
+}
+
+/* OK and Cancel Buttons */
+#returnOkBtn, #returnCancelBtn {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  background: red;
+  opacity: 0;
+}
+
+#returnOkBtn {
+  bottom: 287px;
+  left: 235px;
+  width: 130px;
+  height: 77px;
+}
+
+#returnCancelBtn {
+  bottom: 185px;
+  left: 175px;
+  width: 245px;
+  height: 77px;
+}
+
+
+
+
+
+/* Mimicking the help button behavior, using visibility instead of display */
+.hidden {
+  visibility: hidden;
+}
+
+
+
+.overlayBox {
+  visibility: visible;
+}
+
+
+
+
+
+
+
+
+/* Reveal Button */
+#revealBtn {
+  position: absolute;
+  bottom: 910px; 
+  right: 135px;  /* Adjusted to place next to return button */
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  transform: scale(2);
+  transform-origin: center;
+}
+
+
+#revealBtnImg {
+  width: 77px;
+  height: 68px;
+}
+
+/* Reveal Confirmation Box */
+#revealMenuBox {
+  position: fixed;
+  top: -2500%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  transform: scale(2);
+  transform-origin: center;
+}
+
+#revealMenuBox img {
+  width: 600px;
+  height: 800px;
+}
+
+/* OK and Cancel Buttons */
+#revealOkBtn, #revealCancelBtn {
+  position: absolute;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+}
+
+#revealOkBtn {
+  bottom: 287px;
+  left: 235px;
+  width: 130px;
+  height: 77px;
+}
+
+#revealCancelBtn {
+  bottom: 185px;
+  left: 175px;
+  width: 245px;
+  height: 77px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#inputContainer {
+  position: relative;
+  top: -760px;
+  left: 165px;
+  width: 380px;
+  height: 74.5px;
+  margin: auto;
+  transform: scale(1.8); /* Adjust this value as needed */
+  transform-origin: center center;
+}
+
+#inputFrame {
+  position: absolute;
+  top: 50;
+  left: 38%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Make sure the image is behind the input field */
+}
+
+#stationInput {
+  position: absolute;
+  bottom: 1px; /* Adjust for padding within the image */
+  left: -35px; /* Adjust for padding within the image */
+  width: calc(100% - 40px); /* Adjust to fit within the frame */
+  height: calc(100% - 20px); /* Adjust to fit within the frame */
+  padding: 10px;
+  background-color: transparent;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 19px;
+  color: #b6f5db;
+  border: none; /* Remove default borders */
+  z-index: 2; /* Ensure input is on top of the frame */
+  outline: none; /* Remove the default blue outline */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Button Styles */
+#submitBtn, #resetBtn {
+  font-family: 'Press Start 2P', cursive;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transform: scale(1.85); /* Adjust this value as needed */
+  transform-origin: center center;
+}
+
+#submitBtn {
+  position: relative;
+  top: -760px; /* Adjust based on how you want it to align */
+  left: 300px;
+  background: none; /* Remove the background color */
+  border: none; /* Remove the border */
+  padding: 0;
+  cursor: pointer;
+}
+
+#submitImg {
+  width: 120px; /* Match the OK button dimensions */
+  height: 75px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Flash animation styling */
+.flash {
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%); /* Center it at the specified coordinates */
+  z-index: 4; /* Ensure it's above all other elements */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Label for T-Centralen */
+.label-TC {
+  font-size: 10.5px;
+  font-weight: bold;
+  color: #464969;
+  transform: translate(0%, -50%); /* Center the label vertically */
+  transform-origin: 0% 50%; /* Anchor point at the start of the text */
+}
+
+/* Straight label for stations */
+.label-straight {
+  font-size: 14px;
+  color: #b6f5db; /* Light green color */
+  transform: translate(0%, -50%); /* Center the label vertically */
+  transform-origin: 0% 50%; /* Anchor point at the start of the text */
+}
+
+/* Rotated label for stations (like Hötorget) */
+.label-rotated {
+  font-size: 14px;
+  color: #b6f5db; /* Same light green */
+  transform: translate(0%, -50%) rotate(-45deg); /* Rotates the label 45 degrees */
+  transform-origin: 0% 50%; /* Anchor point at the start of the text */
+}
+
+.label-straight-right {
+  font-size: 14px;
+  color: #b6f5db; /* Light green color */
+  transform: translateX(-100%) !important; /* Ensure the transform is applied */
+  transform-origin: right center !important; /* Anchor point at the end of the text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.label-rotated-right {
+  font-size: 14px;
+color: #b6f5db; /* Same light green */
+transform: translateX(-100%) rotate(-45deg) !important; /* Apply translation and rotation */
+transform-origin: right center !important; /* Anchor point at the end of the text */
+white-space: nowrap; /* Prevent text wrapping */
+}
+
+
+
+
+
+
+#logoContainer {
+  display: none; /* Hidden by default */
+  position: absolute;
+  bottom: 150px;
+  width: 100%;
+  text-align: center;
+  z-index: 9999;
+  transform: scale(3); /* Adjust this value as needed */
+  transform-origin: center center;
+}
+
+#logoContainer img {
+  max-width: 80%; /* Adjust as needed */
+  height: auto;
+}
+
+/* Show logo only when #gameContainer is visible */
+#gameContainer:not([style*="display: none"]) #logoContainer {
+  display: block; /* Show when game screen is visible in portrait */
+}
+
