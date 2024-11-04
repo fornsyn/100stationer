@@ -26,6 +26,7 @@ img {
 body, html {
   overflow: hidden;
   height: 100%;
+  margin: 0;
 }
 
 #wrapper {
@@ -34,6 +35,7 @@ body, html {
   left: 0;
   width: 100%; /* Full width of the viewport */
   height: 100%; /* Full height of the viewport */
+  max-height: 1200px;
   display: flex; /* Use flexbox for layout */
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */

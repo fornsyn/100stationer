@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Function to handle placing all stations when "all" is entered
   stationInput.addEventListener('input', (event) => {
-    if (event.target.value.toLowerCase() === 'all') {
+    if (event.target.value.toLowerCase() === 'allihopa') {
       event.target.value = ''; // Clear the input for better testing experience
 
       // Loop through each station in the 'stations' list and place it on the map
@@ -21,6 +21,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
+// Save the initial scroll position to lock in place
+let initialScrollY = 0;
+
+function lockScroll() {
+  initialScrollY = window.scrollY;
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${initialScrollY}px`;
+}
+
+function unlockScroll() {
+  document.body.style.position = '';
+  document.body.style.top = '';
+  window.scrollTo(0, initialScrollY);
+}
+
+// Detect viewport height change (keyboard appearance) and lock scroll
+window.addEventListener('resize', () => {
+  if (window.innerHeight < 500) { // Adjust threshold as needed for keyboard detection
+    lockScroll(); // Lock scroll when keyboard appears
+  } else {
+    unlockScroll(); // Unlock scroll when keyboard is hidden
+  }
+});
 
 
 
