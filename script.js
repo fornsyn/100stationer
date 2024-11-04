@@ -1987,7 +1987,7 @@ let countdown;              // Timer interval variable
 function startTimer() {
   if (!timerEnabled) return;  // Do nothing if the timer is disabled
 
-  let timeRemaining = 1; // Set for testing, replace with 600 for 10 minutes
+  let timeRemaining = 600;
   const timerDisplay = document.getElementById('timerDisplay');
   const timerFrame = document.getElementById('timerFrame');
 
