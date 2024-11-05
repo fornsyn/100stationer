@@ -1382,7 +1382,7 @@ const stations = {
       flashType: "blink1"
     },
   "Solna Strand": {
-      aliases: ["solnastrand"] ,
+      aliases: ["solnastrand", "vreten"] ,
       labelClass: "label-straight",
       labels: ['blue'],
       textCoords: { x: (484 / 1600) * 100, y: (269 / 1200) * 100 },
