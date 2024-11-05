@@ -618,7 +618,7 @@ const stations = {
         flashType: "blink1" 
     },
   "Hökarängen": {
-      aliases: [],
+      aliases: ["hökis"],
       labelClass: "label-straight",
       labels: ['green'],
       textCoords: { x: (1248 / 1600) * 100, y: (1064 / 1200) * 100 },
@@ -628,7 +628,7 @@ const stations = {
         flashType: "blink1" 
     },
   "Gubbängen": {
-      aliases: [],
+      aliases: ["gubbis"],
       labelClass: "label-straight",
       labels: ['green'],
       textCoords: { x: (1248 / 1600) * 100, y: (1023 / 1200) * 100 },
@@ -1342,7 +1342,7 @@ const stations = {
       flashType: "blink1"
     }, 
   "Rinkeby": {
-      aliases: [],
+      aliases: ["byn"],
       labelClass: "label-straight",
       labels: ['blue'],
       textCoords: { x: (358 / 1600) * 100, y: (143 / 1200) * 100 },
