@@ -1439,8 +1439,8 @@ const stations = {
       aliases: [],
       labelClass: "label-rotated",
       labels: ['blue'],
-      textCoords: { x: (698 / 1600) * 100, y: (168 / 1200) * 100 },
-        brightCoords: { x: (678 / 1600) * 100, y: (190 / 1200) * 100 },
+      textCoords: { x: (730/ 1600) * 100, y: (160 / 1200) * 100 },
+        brightCoords: { x: (715 / 1600) * 100, y: (180 / 1200) * 100 },
         brightImage: "kymlinge_ghost.png",
         flashCoords: { x: (678 / 1600) * 100, y: (190 / 1200) * 100 },
       flashType: "blink1" 
