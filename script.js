@@ -1,5 +1,8 @@
 
 
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const stationInput = document.getElementById('stationInput'); // Ensure this matches your input field ID
 
@@ -184,10 +187,56 @@ function startGame() {
 
 
 
+// Preöpad all images
+function preloadImages(imagePaths) {
+  imagePaths.forEach((path) => {
+    const img = new Image();
+    img.src = path;
+  });
+}
 
+const buttonImages = [
+  'Images/UI/RigidBtn_Menubox_Idle.png',
+  'Images/UI/RigidBtn_Menubox_Instruct.png',
+  'Images/UI/RigidBtn_Menubox_Settings.png',
+  'Images/UI/RigidBtn_Menubox_Start.png',
+  'Images/UI/Settings_sound-02.png',
+  'Images/UI/Start_button-01.png',
+  'Images/UI/Start_button-02.png',
+  'Images/UI/Instructions_button-01.png',
+  'Images/UI/Instructions_button-02.png',
+  'Images/UI/Settings_button-01.png',
+  'Images/UI/Settings_button-02.png',
+  'Images/UI/OK_button-01.png',
+  'Images/UI/OK_button-02.png',
+  'Images/UI/OK_button-red.png',
+  'Images/UI/Settings_sound-01.png',
+  'Images/UI/Settings_sound-02.png',
+  'Images/UI/Settings_time-01.png',
+  'Images/UI/Settings_time-02.png',
+  'Images/UI/sound_toggle_on.png',
+  'Images/UI/sound_toggle_off.png',
+  'Images/UI/help_down.png',
+  'Images/UI/help_up.png',
+  'Images/UI/return_down.png',
+  'Images/UI/return_up.png',
+  'Images/UI/reveal_down.png',
+  'Images/UI/reveal_up.png',
+  'Images/UI/Finished_game-01.png',
+  'Images/UI/Finished_game-02.png',
+  'Images/UI/return_menu_cancel.png',
+  'Images/UI/return_menu_ok.png',
+  'Images/UI/return_menu_idle.png',
+  'Images/UI/reveal_menu_cancel.png',
+  'Images/UI/reveal_menu_ok.png',
+  'Images/UI/reveal_menu_idle.png',
+  'Images/UI/Time_up-01.png',
+  'Images/UI/Time_up-02.png',
+  'Images/UI/Time_up-03.png',
+  
 
-
-
+  // Add other button images here
+];
 
 
 
