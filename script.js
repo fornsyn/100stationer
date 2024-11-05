@@ -2417,13 +2417,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // Function to reveal all unguessed stations in a darker color
 function revealUnguessedStations() {
   for (const stationKey in stations) {
+    // Skip "Kymlinge" to keep it hidden as an easter egg
+    if (stationKey === "Kymlinge") continue;
+
     const station = stations[stationKey];
 
     if (guessedStations.includes(stationKey)) {
       // Display guessed stations with the original color
       placeStationElements(stationKey, station);  // Use existing color and positioning
     } else {
-      // Dark color for unguessed stations
+      // Color for unguessed stations
       const darkColor = "#b4beb9";      // Color for unguessed stations
 
       // Set the color for unguessed stations
@@ -2451,6 +2454,7 @@ function displayStationText(stationKey, station, color) {
   const mapContainer = document.getElementById('mapContainer'); // Use the correct map container ID
   mapContainer.appendChild(textElement);
 }
+
 
 
 
