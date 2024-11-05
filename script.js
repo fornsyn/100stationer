@@ -1446,7 +1446,7 @@ const stations = {
       textCoords: { x: (730/ 1600) * 100, y: (160 / 1200) * 100 },
         brightCoords: { x: (715 / 1600) * 100, y: (180 / 1200) * 100 },
         brightImage: "kymlinge_ghost.png",
-        flashCoords: { x: (678 / 1600) * 100, y: (190 / 1200) * 100 },
+        flashCoords: { x: (715 / 1600) * 100, y: (180 / 1200) * 100 },
       flashType: "blink1" 
     },
 
@@ -1682,6 +1682,9 @@ function submitStation() {
       animateSubmitButton();
       placeStationElements(stationKey, station);
 
+      // Trigger flash animation with station's specific flash coordinates and type
+      triggerFlash(station.flashCoords.x, station.flashCoords.y, station.flashType);
+
       // Special handling for Kymlinge
       if (stationKey === "Kymlinge") {
         console.log("Kymlinge detected, playing ghost sound and clearing input.");
@@ -1734,6 +1737,7 @@ function submitStation() {
     console.log("Incorrect guess, input left in field.");
   }
 }
+
 
 
 
@@ -1919,6 +1923,8 @@ function placeStationElements(stationKey, station) {
 
 // Function to trigger the flash animation at specified coordinates with a specific flash type
 function triggerFlash(x, y, flashType) {
+  console.log("triggerFlash called with:", { x, y, flashType }); // Log the inputs
+
   // Create a div element for the flash animation
   const flashElement = document.createElement('div');
   flashElement.className = `flash ${flashType}`; // Assign the flash type as a class
@@ -1939,27 +1945,36 @@ function triggerFlash(x, y, flashType) {
           flashElement.style.width = '28px';
           flashElement.style.height = '83px';
           break;
-      case "blink2_liggande": // New flash type
+      case "blink2_liggande":
           flashElement.style.width = '63px';
           flashElement.style.height = '38px';
           break;
-      case "blink3_liggande": // New flash type
+      case "blink3_liggande":
           flashElement.style.width = '83px';
           flashElement.style.height = '38px';
           break;
-      case "blink4": // New flash type
+      case "blink4":
           flashElement.style.width = '112px';
           flashElement.style.height = '32px';
           break;
-      case "blink5": // New flash type
+      case "blink5":
           flashElement.style.width = '177px';
           flashElement.style.height = '47px';
           break;
-      // Add more flash types if needed...
+      default:
+          console.warn("Unknown flashType:", flashType); // Log a warning if flashType is unknown
+          break;
   }
 
   // Append the flash element to the map container
-  document.getElementById('mapContainer').appendChild(flashElement);
+  const mapContainer = document.getElementById('mapContainer');
+  if (mapContainer) {
+      mapContainer.appendChild(flashElement);
+      console.log("Flash element appended to map container"); // Confirm element is added
+  } else {
+      console.error("mapContainer not found"); // Log an error if container is missing
+      return;
+  }
 
   // Array to store the image file paths for the selected flash type
   let imageFiles = [];
@@ -1987,36 +2002,40 @@ function triggerFlash(x, y, flashType) {
               'Images/Animations/Blink 3/blink3-03.png'
           ];
           break;
-      case "blink2_liggande": // New flash type
+      case "blink2_liggande":
           imageFiles = [
               'Images/Animations/Blink 2 Liggande/blink2_liggande01.png',
               'Images/Animations/Blink 2 Liggande/blink2_liggande02.png',
               'Images/Animations/Blink 2 Liggande/blink2_liggande03.png'
           ];
           break;
-      case "blink3_liggande": // New flash type
+      case "blink3_liggande":
           imageFiles = [
               'Images/Animations/Blink 3 Liggande/blink3_liggande01.png',
               'Images/Animations/Blink 3 Liggande/blink3_liggande02.png',
               'Images/Animations/Blink 3 Liggande/blink3_liggande03.png'
           ];
           break;
-      case "blink4": // New flash type
+      case "blink4":
           imageFiles = [
               'Images/Animations/Blink 4/Blink4-01.png',
               'Images/Animations/Blink 4/Blink4-02.png',
               'Images/Animations/Blink 4/Blink4-03.png'
           ];
           break;
-      case "blink5": // New flash type
+      case "blink5":
           imageFiles = [
               'Images/Animations/Blink 5/Blink5-01.png',
               'Images/Animations/Blink 5/Blink5-02.png',
               'Images/Animations/Blink 5/Blink5-03.png'
           ];
           break;
-      // Add more flash image sequences as needed...
+      default:
+          console.warn("Unknown flashType for images:", flashType);
+          break;
   }
+
+  console.log("Image files selected:", imageFiles); // Log the selected images
 
   // Function to cycle through the images
   let frame = 0;
@@ -2024,13 +2043,14 @@ function triggerFlash(x, y, flashType) {
       if (frame >= imageFiles.length) {
           clearInterval(animationInterval); // Stop animation once all frames are shown
           flashElement.remove(); // Remove flash element after the animation is complete
+          console.log("Flash animation completed and element removed"); // Confirm animation end
       } else {
           flashElement.style.backgroundImage = `url('${imageFiles[frame]}')`;
+          console.log(`Displaying frame ${frame + 1}:`, imageFiles[frame]); // Log each frame display
           frame++;
       }
   }, 60); // Set interval timing for frame switching
 }
-
 
 
 
