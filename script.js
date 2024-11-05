@@ -233,13 +233,12 @@ const buttonImages = [
   'Images/UI/Time_up-01.png',
   'Images/UI/Time_up-02.png',
   'Images/UI/Time_up-03.png',
-  
-
-  // Add other button images here
 ];
 
 
-
+window.addEventListener('load', () => {
+  preloadImages(buttonImages);
+});
 
 
 
