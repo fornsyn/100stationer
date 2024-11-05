@@ -233,6 +233,10 @@ const buttonImages = [
   'Images/UI/Time_up-01.png',
   'Images/UI/Time_up-02.png',
   'Images/UI/Time_up-03.png',
+  'Images/Brighten/bright_big.png',
+  'Images/Brighten/bright_mid.png',
+  'Images/Brighten/bright_small.png',
+  'Images/Brighten/kymlinge_ghost.png',
 ];
 
 
