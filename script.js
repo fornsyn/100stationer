@@ -261,6 +261,9 @@ selectSound.preload = 'auto';  // Preload the sound
 const wrongSound = new ControlledAudio('Sounds/SFX/wrong1.mp3');
 wrongSound.preload = 'auto';
 
+const kymlingeGhostSound = new ControlledAudio('Sounds/SFX/kymlinge_ghost.mp3');
+kymlingeGhostSound.preload = 'auto';
+
 const revealSound = new ControlledAudio('Sounds/SFX/reveal.mp3');
 revealSound.preload = 'auto';
 
@@ -460,7 +463,7 @@ function hideElement(element) {
 // Stations list
 const stations = {
   //DELADE STATIONER
-  "T-Centralen": {
+  "T-centralen": {
         aliases: ["tc", "tcentralen"],
         labelClass: "label-TC",
         labels: ['blue', 'green', 'red'],
@@ -490,7 +493,7 @@ const stations = {
         flashCoords: { x: (1211 / 1600) * 100, y: (620 / 1200) * 100 },
         flashType: "blink4"
       },
-      "Gamla Stan": {
+      "Gamla stan": {
       aliases: ["gamlastan"],
       labelClass: "label-straight",
       labels: ['green', 'red'],
@@ -577,7 +580,7 @@ const stations = {
         flashCoords: { x: (1080 / 1600) * 100, y: (879 / 1200) * 100 }, 
         flashType: "blink1"
     },
-  "Enskede Gård": {
+  "Enskede gård": {
       aliases: ["enskedegård"],
       labelClass: "label-straight-right",
       labels: ['green'],
@@ -597,7 +600,7 @@ const stations = {
         flashCoords: { x: (1167 / 1600) * 100, y: (791 / 1200) * 100 },
         flashType: "blink1" 
     },
-  "Farsta Strand": {
+  "Farsta strand": {
       aliases: ["farstastrand"],
       labelClass: "label-straight",
       labels: ['green'],
@@ -839,7 +842,7 @@ const stations = {
         flashCoords: { x: (710 / 1600) * 100, y: (451 / 1200) * 100 },
         flashType: "blink3"
       },
-  "Stora Mossen": {
+  "Stora mossen": {
       aliases: ["storamossen"],
       labelClass: "label-rotated-right",
         labels: ['green'],
@@ -939,7 +942,7 @@ const stations = {
         flashCoords: { x: (269 / 1600) * 100, y: (467 / 1200) * 100 },
         flashType: "blink1" 
     },
-  "Hässelby Gård": {
+  "Hässelby gård": {
       aliases: ["hässelbygård"],
       labelClass: "label-rotated-right",
         labels: ['green'],
@@ -949,7 +952,7 @@ const stations = {
         flashCoords: { x: (224 / 1600) * 100, y: (467 / 1200) * 100 },
         flashType: "blink1" 
     },
-   "Hässelby Strand": {
+   "Hässelby strand": {
         aliases: ["hässelbystrand"],
         labelClass: "label-rotated-right",
         labels: ['green'],
@@ -1023,7 +1026,7 @@ const stations = {
         flashCoords: { x: (361 / 1600) * 100, y: (971 / 1200) * 100 },
         flashType: "blink1"  
     },
-  "Vårby Gård": {
+  "Vårby gård": {
       aliases: ["vårbygård"],
       labelClass: "label-straight",
       labels: ['red'],
@@ -1224,7 +1227,7 @@ const stations = {
         flashCoords: { x: (1178 / 1600) * 100, y: (315 / 1200) * 100 },
         flashType: "blink1"
     },
-  "Tekniska Högskolan": {
+  "Tekniska högskolan": {
       aliases: ["tekniska", "tekniskahögskolan"],
       labelClass: "label-straight",
       labels: ['red'],
@@ -1254,7 +1257,7 @@ const stations = {
         flashCoords: { x: (1178 / 1600) * 100, y: (162 / 1200) * 100 },
         flashType: "blink1"
     },
-    "Danderyds Sjukhus": {
+    "Danderyds sjukhus": {
       aliases: ["danderydssjukhus", "danderyd"],
       labelClass: "label-straight",
       labels: ['red'],
@@ -1264,7 +1267,7 @@ const stations = {
         flashCoords: { x: (1178 / 1600) * 100, y: (116 / 1200) * 100 },
         flashType: "blink1"
     },
-    "Mörby Centrum": {
+    "Mörby centrum": {
       aliases: ["mörby", "mörbycentrum", "mörby c", "mörbyc"],
       labelClass: "label-straight",
       labels: ['red'],
@@ -1381,7 +1384,7 @@ const stations = {
         flashCoords: { x: (433 / 1600) * 100, y: (239 / 1200) * 100 },
       flashType: "blink1"
     },
-  "Solna Strand": {
+  "Solna strand": {
       aliases: ["solnastrand", "vreten"] ,
       labelClass: "label-straight",
       labels: ['blue'],
@@ -1431,6 +1434,18 @@ const stations = {
         flashCoords: { x: (608 / 1600) * 100, y: (190 / 1200) * 100 },
       flashType: "blink1" 
     },
+
+    "Kymlinge": {
+      aliases: [],
+      labelClass: "label-rotated",
+      labels: ['blue'],
+      textCoords: { x: (698 / 1600) * 100, y: (168 / 1200) * 100 },
+        brightCoords: { x: (678 / 1600) * 100, y: (190 / 1200) * 100 },
+        brightImage: "kymlinge_ghost.png",
+        flashCoords: { x: (678 / 1600) * 100, y: (190 / 1200) * 100 },
+      flashType: "blink1" 
+    },
+
   "Hallonbergen": {
       aliases: [],
       labelClass: "label-straight",
@@ -1451,7 +1466,7 @@ const stations = {
         flashCoords: { x: (670 / 1600) * 100, y: (252 / 1200) * 100 },
       flashType: "blink1" 
     },
-  "Solna Centrum": {
+  "Solna centrum": {
       aliases: ["solnacentrum"],
       labelClass: "label-straight",
       labels: ['blue'],
@@ -1461,7 +1476,7 @@ const stations = {
         flashCoords: { x: (702 / 1600) * 100, y: (283 / 1200) * 100 },
       flashType: "blink1" 
     },
-  "Västra Skogen": {
+  "Västra skogen": {
       aliases: ["västraskogen"],
       labelClass: "label-straight",
       labels: ['blue'],
@@ -1505,7 +1520,6 @@ const stations = {
       
     };
   
-
 
 
 
@@ -1631,97 +1645,92 @@ document.getElementById('stationInput').addEventListener('keydown', (e) => {
   }
 });
 
-// Submit station function (Updated to count per line)
+let gameOver = false; // Flag to indicate if the game has ended
+
 function submitStation() {
+  if (gameOver) return; // Prevent submission if the game is over
+
   const inputField = document.getElementById('stationInput');
   let input = inputField.value.trim(); // Get input value and trim spaces
 
   // Normalize the input string to handle lowercase, accents, and Swedish letters
-  input = normalizeString(input); 
+  input = normalizeString(input);
 
   const submitImg = document.getElementById('submitImg'); // Get the OK button image element
 
-  let stationFound = false;  // Flag to track if the station was found
-  let stationAlreadyGuessed = false;  // Flag to track if the station was already guessed
+  let stationFound = false; // Flag to track if the station was found
+  let stationAlreadyGuessed = false; // Flag to track if the station was already guessed
 
   // Check if input matches any station or alias
   for (const stationKey in stations) {
     const station = stations[stationKey];
-
-    // Normalize both station aliases and the stationKey to match the normalized input
     const normalizedAliases = station.aliases.map(alias => normalizeString(alias));
     const normalizedStationKey = normalizeString(stationKey);
 
     if (normalizedAliases.includes(input) || normalizedStationKey === input) {
-      stationFound = true;  // Station found, set flag to true
+      stationFound = true; // Station found, set flag to true
 
-      // Check if the station has already been guessed
       if (guessedStations.includes(stationKey)) {
         stationAlreadyGuessed = true;
         break;
       }
 
-      // Trigger OK button animation
       animateSubmitButton();
-
-      // Place station text and bright image on the map
       placeStationElements(stationKey, station);
 
-      // Trigger the flash animation at the specified flashCoords and flashType
-      triggerFlash(station.flashCoords.x, station.flashCoords.y, station.flashType);
+      // Special handling for Kymlinge
+      if (stationKey === "Kymlinge") {
+        console.log("Kymlinge detected, playing ghost sound and clearing input.");
+        kymlingeGhostSound.play().catch(error => console.log('Audio playback failed:', error));
+      } else {
+        console.log("Playing random sound for a regular station.");
+        playRandomSound();
+      }
 
-      playRandomSound();  // Play random station sound (plop)
-
-      // Mark the station as guessed
+      // Mark station as guessed and clear input
       guessedStations.push(stationKey);
-
-      // Increment the counters based on line labels
       incrementCounters(station);
 
-      // Check if the timer has started and timer is enabled
       if (!timerStarted && timerEnabled) {
-        startTimer();  // Start the timer if it's the first guess and timer is enabled
-        timerStarted = true;  // Set the flag to true so it doesn't start again
+        startTimer();
+        timerStarted = true;
       }
 
       inputField.value = ''; // Clear the input field after a correct guess
+      console.log("Input cleared after correct guess.");
       return;
     }
   }
 
-  // If the station was already guessed, act as if the field was empty
   if (stationAlreadyGuessed) {
     try {
-      const selectSound = new ControlledAudio('Sounds/SFX/select_button1.mp3');  // Play the same sound as empty field
+      const selectSound = new ControlledAudio('Sounds/SFX/select_button1.mp3');
       selectSound.play().catch(error => console.log('Audio playback failed:', error));
     } catch (error) {
-      console.log('Audio playback error:', error);  // Log any playback errors
+      console.log('Audio playback error:', error);
     }
     inputField.value = ''; // Clear the input field when the station is already guessed
+    console.log("Input cleared after already guessed.");
     return;
   }
 
-  // If no station was found, play the wrong submission sound and show red OK button
+  // If no station was found, play the incorrect guess sound and leave input in the field
   if (!stationFound) {
     try {
-      const wrongSound = new ControlledAudio('Sounds/SFX/wrong1.mp3');  // Create new instance of the sound
-      wrongSound.play().catch(error => console.log('Audio playback failed:', error));  // Play wrong1.mp3 for incorrect submission
+      const wrongSound = new ControlledAudio('Sounds/SFX/wrong1.mp3');
+      wrongSound.play().catch(error => console.log('Audio playback failed:', error));
     } catch (error) {
-      console.log('Audio playback error:', error);  // Log any playback errors
+      console.log('Audio playback error:', error);
     }
 
-    // Change the OK button image to red
     submitImg.src = 'Images/UI/OK_button-red.png';
-
-    // Reset the button image back to the original after a short delay
     setTimeout(() => {
-      submitImg.src = 'Images/UI/OK_button-01.png'; // Reset button image after 100ms
+      submitImg.src = 'Images/UI/OK_button-01.png';
     }, 100);
+    console.log("Incorrect guess, input left in field.");
   }
-
-  // Clear input field after every submission, including incorrect guesses
-  inputField.value = '';
 }
+
 
 
 
@@ -1793,12 +1802,18 @@ for (let i = 1; i <= 25; i++) {
   soundEffects.push(`Sounds/SFX/plop${i}.mp3`);
 }
 
-// Function to play a random sound effect
-function playRandomSound() {
-  const randomIndex = Math.floor(Math.random() * soundEffects.length); // Pick a random index
-  const audio = new ControlledAudio(soundEffects[randomIndex]);
-  audio.volume = 0.7;  // Create an audio object with the random sound
-  audio.play(); // Play the randomly selected sound
+// Function to play a sound effect, with a special sound for Kymlinge
+function playRandomSound(isKymlinge = false) {
+  if (isKymlinge) {
+    // Play the Kymlinge-specific ghost sound
+    kymlingeGhostSound.play().catch(error => console.log('Audio playback failed:', error));
+  } else {
+    // Play a random sound effect from the array
+    const randomIndex = Math.floor(Math.random() * soundEffects.length); // Pick a random index
+    const audio = new ControlledAudio(soundEffects[randomIndex]);
+    audio.volume = 0.7;  // Set volume level
+    audio.play(); // Play the randomly selected sound
+  }
 }
 
 
@@ -1837,55 +1852,61 @@ document.getElementById('stationInput').addEventListener('keydown', (event) => {
 
 
   
-  // Function to place station text and bright image
+// Function to place station text and bright image
 function placeStationElements(stationKey, station) {
     // Get the actual size of the map container (scaled size)
     const mapContainer = document.getElementById('mapContainer');
-    const mapWidth = mapContainer.offsetWidth;  // Get current map width
-    const mapHeight = mapContainer.offsetHeight; // Get current map height
+    const mapWidth = mapContainer.offsetWidth;
+    const mapHeight = mapContainer.offsetHeight;
   
     // Calculate the pixel coordinates for the station text
-    const adjustedTextX = (station.textCoords.x / 100) * mapWidth; // Convert percentage to pixels
-    const adjustedTextY = (station.textCoords.y / 100) * mapHeight; // Convert percentage to pixels
+    const adjustedTextX = (station.textCoords.x / 100) * mapWidth;
+    const adjustedTextY = (station.textCoords.y / 100) * mapHeight;
   
     // Create and position the station text
     const stationText = document.createElement('div');
-    stationText.textContent = stationKey; // Use the station key (main title) as the displayed name
-    stationText.classList.add(station.labelClass, 'station-text'); // Add dynamic class for text
+    stationText.textContent = stationKey;
+    stationText.classList.add(station.labelClass, 'station-text');
     stationText.style.position = 'absolute';
-    stationText.style.left = `${adjustedTextX}px`; // Use pixel values
-    stationText.style.top = `${adjustedTextY}px`;  // Use pixel values
+    stationText.style.left = `${adjustedTextX}px`;
+    stationText.style.top = `${adjustedTextY}px`;
   
-    // Apply translation and rotation only to the text (using custom anchor point)
     if (station.labelClass === "label-rotated") {
-      stationText.style.transform = 'translate(0%, -50%) rotate(-45deg)';
-      stationText.style.transformOrigin = '0% 50%'; // Custom anchor point
+        stationText.style.transform = 'translate(0%, -50%) rotate(-45deg)';
+        stationText.style.transformOrigin = '0% 50%';
     } else {
-      stationText.style.transform = 'translate(0%, -50%)'; // For non-rotated text
-      stationText.style.transformOrigin = '0% 50%';
+        stationText.style.transform = 'translate(0%, -50%)';
+        stationText.style.transformOrigin = '0% 50%';
     }
   
-    // Append the text to the map container
-    document.getElementById('mapContainer').appendChild(stationText);
+    mapContainer.appendChild(stationText);
   
     // Calculate the pixel coordinates for the bright image
-    const adjustedBrightX = (station.brightCoords.x / 100) * mapWidth; // Convert percentage to pixels
-    const adjustedBrightY = (station.brightCoords.y / 100) * mapHeight; // Convert percentage to pixels
+    const adjustedBrightX = (station.brightCoords.x / 100) * mapWidth;
+    const adjustedBrightY = (station.brightCoords.y / 100) * mapHeight;
   
     // Create and position the bright image
     const brightImage = document.createElement('img');
-    brightImage.src = `Images/Brighten/${station.brightImage}`; // Use correct image source
+    brightImage.src = `Images/Brighten/${station.brightImage}`;
     brightImage.classList.add('bright-image');
     brightImage.style.position = 'absolute';
-    brightImage.style.left = `${adjustedBrightX}px`; // Use pixel values
-    brightImage.style.top = `${adjustedBrightY}px`;  // Use pixel values
+    brightImage.style.left = `${adjustedBrightX}px`;
+    brightImage.style.top = `${adjustedBrightY}px`;
+    brightImage.style.transform = 'translate(-50%, -50%)';
   
-    // Apply centering for the bright image
-    brightImage.style.transform = 'translate(-50%, -50%)'; // Center the image exactly at the coordinates
+    mapContainer.appendChild(brightImage);
   
-    // Append the bright image to the map container
-    document.getElementById('mapContainer').appendChild(brightImage);
-  }
+    // Debugging logs
+    console.log(`Placing elements for station: ${stationKey}`);
+
+  
+
+    // Clear the input field after processing
+    const inputField = document.getElementById('stationInput');
+    inputField.value = '';
+    console.log("Cleared the input field");
+}
+
   
 
 
@@ -2052,13 +2073,12 @@ function triggerFlash(x, y, flashType) {
 
 
 // Timer Variables and Functions
-let timerStarted = false;   // Track if the timer has started
-let timerEnabled = true;    // Track if the timer is enabled (from the settings)
-let countdown;              // Timer interval variable
+let timerStarted = false;
+let timerEnabled = true;
+let countdown;
 
-// Function to start the countdown timer (10 minutes)
 function startTimer() {
-  if (!timerEnabled) return;  // Do nothing if the timer is disabled
+  if (!timerEnabled) return;
 
   let timeRemaining = 600;
   const timerDisplay = document.getElementById('timerDisplay');
@@ -2067,51 +2087,45 @@ function startTimer() {
   countdown = setInterval(() => {
     const minutes = Math.floor(timeRemaining / 60);
     const seconds = timeRemaining % 60;
-
-    // Update the timer display
     timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
     timeRemaining--;
 
-    // Change the frame and text color at the 60-second mark
     if (timeRemaining === 58) {
-      timerFrame.src = "Images/UI/timer_box-red.png"; // Replace with red frame
-      timerDisplay.style.color = "#f8d1ca"; // Change text color
+      timerFrame.src = "Images/UI/timer_box-red.png";
+      timerDisplay.style.color = "#f8d1ca";
     }
 
-    // If the time runs out, stop the timer and trigger game over
     if (timeRemaining < 0) {
       clearInterval(countdown);
-      gameOver(); // Trigger game over when the timer runs out
+      gameOver = true; // Set gameOver to true when time runs out
+      gameOverFunction();
     }
-  }, 1000); // Run every second
+  }, 1000);
 }
 
-// Game over function to handle the end of the timer
-function gameOver() {
-  clearInterval(countdown); // Stop the timer
+function gameOverFunction() {
+  clearInterval(countdown);
 
-  // Use actual game counters
-  const currentTotal = totalCounter;      // Total stations guessed
-  const blueLineCount = blueCounter;      // Guesses for blue line
-  const greenLineCount = greenCounter;    // Guesses for green line
-  const redLineCount = redCounter;        // Guesses for red line
+  const currentTotal = totalCounter;
+  const blueLineCount = blueCounter;
+  const greenLineCount = greenCounter;
+  const redLineCount = redCounter;
 
   showTimeUpScreen(currentTotal, blueLineCount, greenLineCount, redLineCount);
+
+  // Disable the input field when the game ends
+  document.getElementById('stationInput').disabled = true;
 }
 
-// Show the end-game overlay and update counters
 function showTimeUpScreen(currentTotal, blueLineCount, greenLineCount, redLineCount) {
-  console.log("showTimeUpScreen triggered"); // Debugging log
+  console.log("showTimeUpScreen triggered");
 
-  // Play the wrong sound
   wrongSound.play();
 
-  // Show the time-up overlay by removing hidden and setting display
   const timeUpOverlay = document.getElementById("timeUpOverlay");
   timeUpOverlay.classList.remove("hidden");
   timeUpOverlay.style.display = "flex";
 
-  // Update counters in the time-up overlay
   document.getElementById("timeUpCounterText").textContent = `${currentTotal}/100`;
   document.getElementById("timeUpBlueCounterText").textContent = `${blueLineCount}/20`;
   document.getElementById("timeUpGreenCounterText").textContent = `${greenLineCount}/49`;
@@ -2119,7 +2133,6 @@ function showTimeUpScreen(currentTotal, blueLineCount, greenLineCount, redLineCo
 }
 
 window.addEventListener("load", function() {
-  // Set the overlay to be hidden initially
   document.getElementById("timeUpOverlay").style.display = "none";
 });
 
@@ -2387,7 +2400,7 @@ function revealUnguessedStations() {
       placeStationElements(stationKey, station);  // Use existing color and positioning
     } else {
       // Dark color for unguessed stations
-      const darkColor = "#212b31";      // Color for unguessed stations
+      const darkColor = "#b4beb9";      // Color for unguessed stations
 
       // Set the color for unguessed stations
       displayStationText(stationKey, station, darkColor); // Call with dark color

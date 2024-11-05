@@ -1036,6 +1036,3 @@ white-space: nowrap; /* Prevent text wrapping */
 
 
 
-#logoContainer {
-  display: none; /* Always hidden on desktop/landscape by default */
-}
