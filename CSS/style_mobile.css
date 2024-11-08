@@ -293,7 +293,6 @@ body, html {
   flex-direction: column;
   overflow: hidden;
   position: absolute; /* Use absolute positioning to control placement */
-  top: 0%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1.1);
   overflow: hidden; /* Prevents scrolling within the gameContainer */
