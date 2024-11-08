@@ -78,7 +78,7 @@ let soundEnabled = true;  // Global sound toggle variable
 
 class ControlledAudio {
   constructor(src) {
-    this.audio = soundEnabled ? new Audio(src) : new Audio(); // Create audio element with or without src
+    this.audio = soundEnabled ? new Audio(src) : new Audio();
     this.volume = 1.0; // Default volume is 100%
   }
 
