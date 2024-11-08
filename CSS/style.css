@@ -280,7 +280,7 @@ body, html {
 
 
 
-  
+
 /* Game Screen Styles */
 #gameContainer {
   display: none; /* Initially hide the game screen */
@@ -372,7 +372,6 @@ body, html {
 
 #timerContainer {
   position: absolute;
-  top: -77px; /* Adjust positioning based on the screen layout */
   right: -78%; /* Positioning on the top-right of the screen */
   transform: translateX(50%);
   width: 300px; /* Adjust size based on the PNG frame */
@@ -738,8 +737,8 @@ body, html {
 /* Return Button */
 #returnBtn {
   position: absolute;
-  bottom: 1px; 
-  right: 540px;  
+  bottom: 1px;
+  right: 540px;
   background: none;
   border: none;
   cursor: pointer;
@@ -814,7 +813,7 @@ body, html {
 /* Reveal Button */
 #revealBtn {
   position: absolute;
-  bottom: 1px; 
+  bottom: 1px;
   right: 632px;  /* Adjusted to place next to return button */
   background: none;
   border: none;
