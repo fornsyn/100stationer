@@ -280,7 +280,7 @@ body, html {
 
 
 
-  
+
 /* Game Screen Styles */
 #gameContainer {
   display: none; /* Initially hide the game screen */
@@ -681,7 +681,7 @@ body, html {
 
 #soundToggleGame {
   position: absolute;
-  bottom: 916px; 
+  bottom: 916px;
   right: -190px;  /* Adjusted to place next to return button */
   background: none;
   border: none;
@@ -701,7 +701,7 @@ body, html {
 
 #helpBtn {
   position: absolute;
-  bottom: 910px; 
+  bottom: 910px;
   right: -360px;  /* Adjusted to place next to return button */
   background: none;
   border: none;
@@ -754,7 +754,7 @@ body, html {
 /* Return Button */
 #returnBtn {
   position: absolute;
-  bottom: 910px; 
+  bottom: 910px;
   right: -30px;  /* Adjusted to place next to return button */
   background: none;
   border: none;
@@ -835,7 +835,7 @@ body, html {
 /* Reveal Button */
 #revealBtn {
   position: absolute;
-  bottom: 910px; 
+  bottom: 910px;
   right: 135px;  /* Adjusted to place next to return button */
   background: none;
   border: none;

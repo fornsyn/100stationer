@@ -280,7 +280,7 @@ body, html {
 
 
 
-  
+
 /* Game Screen Styles */
 #gameContainer {
   display: none; /* Initially hide the game screen */
@@ -738,8 +738,8 @@ body, html {
 /* Return Button */
 #returnBtn {
   position: absolute;
-  bottom: 1px; 
-  right: 540px;  
+  bottom: 1px;
+  right: 540px;
   background: none;
   border: none;
   cursor: pointer;
@@ -814,7 +814,7 @@ body, html {
 /* Reveal Button */
 #revealBtn {
   position: absolute;
-  bottom: 1px; 
+  bottom: 1px;
   right: 632px;  /* Adjusted to place next to return button */
   background: none;
   border: none;
