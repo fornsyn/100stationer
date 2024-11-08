@@ -372,7 +372,6 @@ body, html {
 
 #timerContainer {
   position: absolute;
-  top: -77px; /* Adjust positioning based on the screen layout */
   right: -78%; /* Positioning on the top-right of the screen */
   transform: translateX(50%);
   width: 300px; /* Adjust size based on the PNG frame */
