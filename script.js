@@ -78,7 +78,7 @@ let soundEnabled = true;  // Global sound toggle variable
 
 class ControlledAudio {
   constructor(src) {
-    this.audio = new Audio(src);
+    this.audio = soundEnabled ? new Audio(src) : new Audio();
     this.volume = 1.0; // Default volume is 100%
   }
 
@@ -155,7 +155,7 @@ gameScreenSoundToggleBtn.addEventListener('click', function() {
 function initializeSoundButtons() {
   const startMenuSoundToggleBtn = document.getElementById('soundToggleImg');
   const gameScreenSoundToggleBtn = document.getElementById('soundToggleGame');
-  
+
   // Set the initial state for both buttons
   if (soundEnabled) {
     startMenuSoundToggleBtn.src = 'Images/UI/Settings_sound-01.png';
@@ -170,7 +170,7 @@ function initializeSoundButtons() {
 function startGame() {
   // Force the game screen button to display the correct image before showing the game screen
   const gameScreenSoundToggleBtn = document.getElementById('soundToggleGame');
-  
+
   if (soundEnabled) {
     gameScreenSoundToggleBtn.src = 'Images/UI/sound_toggle_on.png'; // Sound is ON
   } else {
@@ -507,13 +507,13 @@ const stations = {
         flashCoords: { x: (1211 / 1600) * 100, y: (572 / 1200) * 100 },
         flashType: "blink4"
       },
-      
-  
-  
-  
+
+
+
+
   //GRÖN LINJE
-  
-  
+
+
   "Hagsätra": {
       aliases: [],
       labelClass: "label-straight-right",
@@ -581,7 +581,7 @@ const stations = {
       textCoords: { x: (1058 / 1600) * 100, y: (866 / 1200) * 100 },
         brightCoords: { x: (1080 / 1600) * 100, y: (879 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (1080 / 1600) * 100, y: (879 / 1200) * 100 }, 
+        flashCoords: { x: (1080 / 1600) * 100, y: (879 / 1200) * 100 },
         flashType: "blink1"
     },
   "Enskede gård": {
@@ -602,7 +602,7 @@ const stations = {
         brightCoords: { x: (1167 / 1600) * 100, y: (791 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1167 / 1600) * 100, y: (791 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Farsta strand": {
       aliases: ["farstastrand"],
@@ -612,7 +612,7 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (1146 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (1146 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
     "Farsta": {
       aliases: [],
@@ -622,7 +622,7 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (1104 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (1104 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Hökarängen": {
       aliases: ['hökis'],
@@ -632,7 +632,7 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (1064 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (1064 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Gubbängen": {
       aliases: ['gubbis'],
@@ -642,7 +642,7 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (1023 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (1023 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Tallkrogen": {
       aliases: [],
@@ -652,7 +652,7 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (982 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (982 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Skogskyrkogården": {
       aliases: [],
@@ -662,7 +662,7 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (942 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (942 / 1200) * 100 },
-        flashType: "blink1"  
+        flashType: "blink1"
     },
   "Sandsborg": {
       aliases: [],
@@ -672,7 +672,7 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (903 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (903 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Blåsut": {
       aliases: [],
@@ -682,7 +682,7 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (859 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (859 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Skarpnäck": {
       aliases: [],
@@ -692,7 +692,7 @@ const stations = {
         brightCoords: { x: (1439 / 1600) * 100, y: (984 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1439 / 1600) * 100, y: (984 / 1200) * 100 },
-        flashType: "blink1"  
+        flashType: "blink1"
     },
   "Bagarmossen": {
       aliases: ["bagis"],
@@ -702,7 +702,7 @@ const stations = {
         brightCoords: { x: (1397 / 1600) * 100, y: (942 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1397 / 1600) * 100, y: (942 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Kärrtorp": {
       aliases: [],
@@ -712,7 +712,7 @@ const stations = {
         brightCoords: { x: (1359 / 1600) * 100, y: (904 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1359 / 1600) * 100, y: (904 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Björkhagen": {
       aliases: [],
@@ -722,7 +722,7 @@ const stations = {
         brightCoords: { x: (1321 / 1600) * 100, y: (865 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1321 / 1600) * 100, y: (865 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Hammarbyhöjden": {
       aliases: [],
@@ -732,7 +732,7 @@ const stations = {
         brightCoords: { x: (1282 / 1600) * 100, y: (828 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1282 / 1600) * 100, y: (828 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Skärmarbrink": {
       aliases: [],
@@ -742,7 +742,7 @@ const stations = {
         brightCoords: { x: (1233 / 1600) * 100, y: (786 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1233 / 1600) * 100, y: (786 / 1200) * 100 },
-        flashType: "blink2_liggande" 
+        flashType: "blink2_liggande"
     },
   "Gullmarsplan": {
       aliases: ["gullmar", "gullmars"],
@@ -752,7 +752,7 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (749 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (749 / 1200) * 100 },
-        flashType: "blink3_liggande" 
+        flashType: "blink3_liggande"
     },
   "Skanstull": {
       aliases: [],
@@ -772,9 +772,9 @@ const stations = {
         brightCoords: { x: (1226 / 1600) * 100, y: (663 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1226 / 1600) * 100, y: (663 / 1200) * 100 },
-        flashType: "blink3_liggande" 
+        flashType: "blink3_liggande"
     },
-  
+
       "Hötorget": {
         aliases: [],
         labelClass: "label-rotated",
@@ -815,7 +815,7 @@ const stations = {
         flashCoords: { x: (925 / 1600) * 100, y: (451 / 1200) * 100 },
         flashType: "blink3"
       },
-  
+
       "Thorildsplan": {
         aliases: [],
         labelClass: "label-rotated-right",
@@ -874,7 +874,7 @@ const stations = {
         brightCoords: { x: (583 / 1600) * 100, y: (460 / 1200) * 100 },
         brightImage: "bright_mid.png",
         flashCoords: { x: (583 / 1600) * 100, y: (460 / 1200) * 100 },
-        flashType: "blink2" 
+        flashType: "blink2"
     },
   "Åkeshov": {
       aliases: [],
@@ -884,7 +884,7 @@ const stations = {
         brightCoords: { x: (541 / 1600) * 100, y: (460 / 1200) * 100 },
         brightImage: "bright_mid.png",
         flashCoords: { x: (541 / 1600) * 100, y: (460 / 1200) * 100 },
-        flashType: "blink2" 
+        flashType: "blink2"
     },
   "Ängbyplan": {
       aliases: [],
@@ -944,7 +944,7 @@ const stations = {
         brightCoords: { x: (269 / 1600) * 100, y: (467 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (269 / 1600) * 100, y: (467 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Hässelby gård": {
       aliases: ["hässelbygård"],
@@ -954,7 +954,7 @@ const stations = {
         brightCoords: { x: (224 / 1600) * 100, y: (467 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (224 / 1600) * 100, y: (467 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
    "Hässelby strand": {
         aliases: ["hässelbystrand"],
@@ -964,21 +964,21 @@ const stations = {
         brightCoords: { x: (177  / 1600) * 100, y: (467 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (177 / 1600) * 100, y: (467 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
       },
-      
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
   // RÖD LINJE
   "Norsborg": {
       aliases: [],
@@ -988,7 +988,7 @@ const stations = {
         brightCoords: { x: (190 / 1600) * 100, y: (1142 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (190 / 1600) * 100, y: (1142 / 1200) * 100 },
-        flashType: "blink1"       
+        flashType: "blink1"
     },
   "Hallunda": {
       aliases: [],
@@ -998,7 +998,7 @@ const stations = {
         brightCoords: { x: (236 / 1600) * 100, y: (1096 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (236 / 1600) * 100, y: (1096 / 1200) * 100 },
-        flashType: "blink1"  
+        flashType: "blink1"
     },
   "Alby": {
       aliases: [],
@@ -1008,7 +1008,7 @@ const stations = {
         brightCoords: { x: (279 / 1600) * 100, y: (1052 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (279 / 1600) * 100, y: (1052 / 1200) * 100 },
-        flashType: "blink1"   
+        flashType: "blink1"
     },
   "Fittja": {
       aliases: [],
@@ -1018,7 +1018,7 @@ const stations = {
         brightCoords: { x: (320 / 1600) * 100, y: (1011 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (320 / 1600) * 100, y: (1011 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Masmo": {
       aliases: [],
@@ -1028,7 +1028,7 @@ const stations = {
         brightCoords: { x: (361 / 1600) * 100, y: (971 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (361 / 1600) * 100, y: (971 / 1200) * 100 },
-        flashType: "blink1"  
+        flashType: "blink1"
     },
   "Vårby gård": {
       aliases: ["vårbygård"],
@@ -1038,7 +1038,7 @@ const stations = {
         brightCoords: { x: (401 / 1600) * 100, y: (931 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (401 / 1600) * 100, y: (931 / 1200) * 100 },
-        flashType: "blink1"   
+        flashType: "blink1"
     },
   "Vårberg": {
       aliases: [],
@@ -1047,8 +1047,8 @@ const stations = {
       textCoords: { x: (468 / 1600) * 100, y: (892 / 1200) * 100 },
         brightCoords: { x: (443 / 1600) * 100, y: (889 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (443 / 1600) * 100, y: (889 / 1200) * 100 }, 
-        flashType: "blink1"    
+        flashCoords: { x: (443 / 1600) * 100, y: (889 / 1200) * 100 },
+        flashType: "blink1"
     },
   "Skärholmen": {
       aliases: [],
@@ -1057,8 +1057,8 @@ const stations = {
       textCoords: { x: (508 / 1600) * 100, y: (852 / 1200) * 100 },
         brightCoords: { x: (483 / 1600) * 100, y: (849 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (483 / 1600) * 100, y: (849 / 1200) * 100 }, 
-        flashType: "blink1"    
+        flashCoords: { x: (483 / 1600) * 100, y: (849 / 1200) * 100 },
+        flashType: "blink1"
     },
   "Sätra": {
       aliases: [],
@@ -1067,8 +1067,8 @@ const stations = {
       textCoords: { x: (548 / 1600) * 100, y: (812 / 1200) * 100 },
         brightCoords: { x: (523 / 1600) * 100, y: (809 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (523 / 1600) * 100, y: (809 / 1200) * 100 }, 
-        flashType: "blink1" 
+        flashCoords: { x: (523 / 1600) * 100, y: (809 / 1200) * 100 },
+        flashType: "blink1"
     },
   "Bredäng": {
     aliases: [],
@@ -1077,8 +1077,8 @@ const stations = {
     textCoords: { x: (590 / 1600) * 100, y: (770 / 1200) * 100 },
       brightCoords: { x: (565 / 1600) * 100, y: (767 / 1200) * 100 },
       brightImage: "bright_small.png",
-      flashCoords: { x: (565 / 1600) * 100, y: (767 / 1200) * 100 }, 
-      flashType: "blink1" 
+      flashCoords: { x: (565 / 1600) * 100, y: (767 / 1200) * 100 },
+      flashType: "blink1"
   },
   "Mälarhöjden": {
         aliases: [],
@@ -1089,7 +1089,7 @@ const stations = {
         brightImage: "bright_small.png",
         flashCoords: { x: (606 / 1600) * 100, y: (726 / 1200) * 100 },
         flashType: "blink1"
-        
+
       },
   "Axelsberg": {
       aliases: [],
@@ -1098,7 +1098,7 @@ const stations = {
       textCoords: { x: (653 / 1600) * 100, y: (661 / 1200) * 100 },
         brightCoords: { x: (643 / 1600) * 100, y: (686 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (643 / 1600) * 100, y: (686 / 1200) * 100 }, 
+        flashCoords: { x: (643 / 1600) * 100, y: (686 / 1200) * 100 },
       flashType: "blink1"
     },
   "Örnsberg": {
@@ -1108,9 +1108,9 @@ const stations = {
       textCoords: { x: (716 / 1600) * 100, y: (661 / 1200) * 100 },
         brightCoords: { x: (716 / 1600) * 100, y: (686 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (716 / 1600) * 100, y: (686 / 1200) * 100 }, 
+        flashCoords: { x: (716 / 1600) * 100, y: (686 / 1200) * 100 },
       flashType: "blink1"
-    }, 
+    },
   "Aspudden": {
       aliases: [],
       labelClass: "label-rotated",
@@ -1118,7 +1118,7 @@ const stations = {
       textCoords: { x: (784 / 1600) * 100, y: (661 / 1200) * 100 },
         brightCoords: { x: (784 / 1600) * 100, y: (686 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (784 / 1600) * 100, y: (686 / 1200) * 100 }, 
+        flashCoords: { x: (784 / 1600) * 100, y: (686 / 1200) * 100 },
       flashType: "blink1"
     },
      "Fruängen": {
@@ -1128,8 +1128,8 @@ const stations = {
       textCoords: { x: (638 / 1600) * 100, y: (946 / 1200) * 100 },
       brightCoords: { x: (613 / 1600) * 100, y: (943 / 1200) * 100 },
       brightImage: "bright_small.png",
-      flashCoords: { x: (613 / 1600) * 100, y: (943 / 1200) * 100 }, 
-      flashType: "blink1"  
+      flashCoords: { x: (613 / 1600) * 100, y: (943 / 1200) * 100 },
+      flashType: "blink1"
     },
   "Västertorp": {
       aliases: [],
@@ -1138,8 +1138,8 @@ const stations = {
       textCoords: { x: (688 / 1600) * 100, y: (896 / 1200) * 100 },
       brightCoords: { x: (663 / 1600) * 100, y: (893 / 1200) * 100 },
       brightImage: "bright_small.png",
-      flashCoords: { x: (663 / 1600) * 100, y: (893 / 1200) * 100 }, 
-      flashType: "blink1" 
+      flashCoords: { x: (663 / 1600) * 100, y: (893 / 1200) * 100 },
+      flashType: "blink1"
     },
   "Hägerstensåsen": {
       aliases: [],
@@ -1148,8 +1148,8 @@ const stations = {
       textCoords: { x: (736 / 1600) * 100, y: (848 / 1200) * 100 },
       brightCoords: { x: (711 / 1600) * 100, y: (845 / 1200) * 100 },
       brightImage: "bright_small.png",
-      flashCoords: { x: (711 / 1600) * 100, y: (845 / 1200) * 100 }, 
-      flashType: "blink1"  
+      flashCoords: { x: (711 / 1600) * 100, y: (845 / 1200) * 100 },
+      flashType: "blink1"
     },
   "Telefonplan": {
       aliases: [],
@@ -1158,7 +1158,7 @@ const stations = {
       textCoords: { x: (786 / 1600) * 100, y: (798 / 1200) * 100 },
       brightCoords: { x: (761 / 1600) * 100, y: (795 / 1200) * 100 },
       brightImage: "bright_small.png",
-      flashCoords: { x: (761 / 1600) * 100, y: (795 / 1200) * 100 }, 
+      flashCoords: { x: (761 / 1600) * 100, y: (795 / 1200) * 100 },
       flashType: "blink1"
     },
   "Midsommarkransen": {
@@ -1168,8 +1168,8 @@ const stations = {
       textCoords: { x: (833 / 1600) * 100, y: (751 / 1200) * 100 },
       brightCoords: { x: (808 / 1600) * 100, y: (748 / 1200) * 100 },
       brightImage: "bright_small.png",
-      flashCoords: { x: (808 / 1600) * 100, y: (748 / 1200) * 100 }, 
-      flashType: "blink1" 
+      flashCoords: { x: (808 / 1600) * 100, y: (748 / 1200) * 100 },
+      flashType: "blink1"
     },
   "Liljeholmen": {
       aliases: [],
@@ -1178,7 +1178,7 @@ const stations = {
       textCoords: { x: (854 / 1600) * 100, y: (661 / 1200) * 100 },
         brightCoords: { x: (854 / 1600) * 100, y: (695 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (854 / 1600) * 100, y: (695 / 1200) * 100 }, 
+        flashCoords: { x: (854 / 1600) * 100, y: (695 / 1200) * 100 },
       flashType: "blink2"
     },
   "Hornstull": {
@@ -1188,7 +1188,7 @@ const stations = {
       textCoords: { x: (922 / 1600) * 100, y: (661 / 1200) * 100 },
         brightCoords: { x: (922 / 1600) * 100, y: (695 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (922 / 1600) * 100, y: (695 / 1200) * 100 }, 
+        flashCoords: { x: (922 / 1600) * 100, y: (695 / 1200) * 100 },
       flashType: "blink2"
     },
   "Zinkensdamm": {
@@ -1198,7 +1198,7 @@ const stations = {
       textCoords: { x: (990 / 1600) * 100, y: (661 / 1200) * 100 },
         brightCoords: { x: (990 / 1600) * 100, y: (695 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (990 / 1600) * 100, y: (695 / 1200) * 100 }, 
+        flashCoords: { x: (990 / 1600) * 100, y: (695 / 1200) * 100 },
       flashType: "blink2"
     },
   "Mariatorget": {
@@ -1208,11 +1208,11 @@ const stations = {
       textCoords: { x: (1058 / 1600) * 100, y: (661 / 1200) * 100 },
         brightCoords: { x: (1058 / 1600) * 100, y: (695 / 1200) * 100 },
         brightImage: "bright_small.png",
-        flashCoords: { x: (1058 / 1600) * 100, y: (695 / 1200) * 100 }, 
+        flashCoords: { x: (1058 / 1600) * 100, y: (695 / 1200) * 100 },
       flashType: "blink2"
     },
   "Östermalmstorg": {
-      aliases: [], 
+      aliases: [],
       labelClass: "label-straight",
       labels: ['red'],
       textCoords: { x: (1216 / 1600) * 100, y: (410 / 1200) * 100 },
@@ -1239,7 +1239,7 @@ const stations = {
         brightCoords: { x: (1178 / 1600) * 100, y: (261 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1178 / 1600) * 100, y: (261 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Universitetet": {
       aliases: [],
@@ -1249,7 +1249,7 @@ const stations = {
         brightCoords: { x: (1178 / 1600) * 100, y: (209 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1178 / 1600) * 100, y: (209 / 1200) * 100 },
-        flashType: "blink1" 
+        flashType: "blink1"
     },
   "Bergshamra": {
       aliases: [],
@@ -1289,7 +1289,7 @@ const stations = {
         brightCoords: { x: (1255 / 1600) * 100, y: (365 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1255 / 1600) * 100, y: (365 / 1200) * 100 },
-        flashType: "blink1"  
+        flashType: "blink1"
       },
       "Gärdet": {
       aliases: [],
@@ -1311,23 +1311,23 @@ const stations = {
         flashCoords: { x: (1408 / 1600) * 100, y: (288 / 1200) * 100 },
         flashType: "blink1"
     },
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   // BLÅ LINJE
-  
+
   "Hjulsta": {
       aliases: [],
       labelClass: "label-straight",
@@ -1347,7 +1347,7 @@ const stations = {
         brightImage: "bright_small.png",
         flashCoords: { x: (305 / 1600) * 100, y: (112 / 1200) * 100 },
       flashType: "blink1"
-    }, 
+    },
   "Rinkeby": {
       aliases: ['byn'],
       labelClass: "label-straight",
@@ -1416,7 +1416,7 @@ const stations = {
         brightCoords: { x: (541 / 1600) * 100, y: (122 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (541 / 1600) * 100, y: (122 / 1200) * 100 },
-      flashType: "blink1" 
+      flashType: "blink1"
     },
   "Husby": {
       aliases: [],
@@ -1426,7 +1426,7 @@ const stations = {
         brightCoords: { x: (576 / 1600) * 100, y: (157 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (576 / 1600) * 100, y: (157 / 1200) * 100 },
-      flashType: "blink1" 
+      flashType: "blink1"
     },
   "Kista": {
       aliases: [],
@@ -1436,7 +1436,7 @@ const stations = {
         brightCoords: { x: (608 / 1600) * 100, y: (190 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (608 / 1600) * 100, y: (190 / 1200) * 100 },
-      flashType: "blink1" 
+      flashType: "blink1"
     },
 
     "Kymlinge": {
@@ -1447,7 +1447,7 @@ const stations = {
         brightCoords: { x: (715 / 1600) * 100, y: (180 / 1200) * 100 },
         brightImage: "kymlinge_ghost.png",
         flashCoords: { x: (715 / 1600) * 100, y: (180 / 1200) * 100 },
-      flashType: "blink1" 
+      flashType: "blink1"
     },
 
   "Hallonbergen": {
@@ -1458,7 +1458,7 @@ const stations = {
         brightCoords: { x: (640 / 1600) * 100, y: (221 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (640 / 1600) * 100, y: (221 / 1200) * 100 },
-      flashType: "blink1" 
+      flashType: "blink1"
     },
   "Näckrosen": {
       aliases: [],
@@ -1468,7 +1468,7 @@ const stations = {
         brightCoords: { x: (670 / 1600) * 100, y: (252 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (670 / 1600) * 100, y: (252 / 1200) * 100 },
-      flashType: "blink1" 
+      flashType: "blink1"
     },
   "Solna centrum": {
       aliases: ["solnacentrum"],
@@ -1478,7 +1478,7 @@ const stations = {
         brightCoords: { x: (702 / 1600) * 100, y: (283 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (702 / 1600) * 100, y: (283 / 1200) * 100 },
-      flashType: "blink1" 
+      flashType: "blink1"
     },
   "Västra skogen": {
       aliases: ["västraskogen"],
@@ -1518,12 +1518,12 @@ const stations = {
         brightCoords: { x: (1331 / 1600) * 100, y: (511 / 1200) * 100 },
         brightImage: "bright_small.png",
         flashCoords: { x: (1331 / 1600) * 100, y: (511 / 1200) * 100 },
-      flashType: "blink1" 
+      flashType: "blink1"
     }
-  
-      
+
+
     };
-  
+
 
 
 
@@ -1573,7 +1573,7 @@ function incrementCounters(station) {
     blueCounter++;
     updateBlueCounter();
   }
-  
+
   if (station.labels.includes('green')) {
     greenCounter++;
     updateGreenCounter();
@@ -1799,7 +1799,7 @@ stationInput.addEventListener('keypress', function(event) {
 
 
 
-  
+
 
 
 
@@ -1831,11 +1831,11 @@ function playRandomSound(isKymlinge = false) {
 function playRandomTypingSound() {
   // Generate a random number between 1 and 25
   const randomIndex = Math.floor(Math.random() * 25) + 1;
-  
+
   // Construct the path to the random sound file
   const typingSound = new ControlledAudio(`Sounds/SFX/typing${randomIndex}.mp3`);
   typingSound.volume = 0.7;
-  
+
   // Play the sound
   typingSound.play();
 }
@@ -1859,18 +1859,18 @@ document.getElementById('stationInput').addEventListener('keydown', (event) => {
 
 
 
-  
+
 // Function to place station text and bright image
 function placeStationElements(stationKey, station) {
     // Get the actual size of the map container (scaled size)
     const mapContainer = document.getElementById('mapContainer');
     const mapWidth = mapContainer.offsetWidth;
     const mapHeight = mapContainer.offsetHeight;
-  
+
     // Calculate the pixel coordinates for the station text
     const adjustedTextX = (station.textCoords.x / 100) * mapWidth;
     const adjustedTextY = (station.textCoords.y / 100) * mapHeight;
-  
+
     // Create and position the station text
     const stationText = document.createElement('div');
     stationText.textContent = stationKey;
@@ -1878,7 +1878,7 @@ function placeStationElements(stationKey, station) {
     stationText.style.position = 'absolute';
     stationText.style.left = `${adjustedTextX}px`;
     stationText.style.top = `${adjustedTextY}px`;
-  
+
     if (station.labelClass === "label-rotated") {
         stationText.style.transform = 'translate(0%, -50%) rotate(-45deg)';
         stationText.style.transformOrigin = '0% 50%';
@@ -1886,13 +1886,13 @@ function placeStationElements(stationKey, station) {
         stationText.style.transform = 'translate(0%, -50%)';
         stationText.style.transformOrigin = '0% 50%';
     }
-  
+
     mapContainer.appendChild(stationText);
-  
+
     // Calculate the pixel coordinates for the bright image
     const adjustedBrightX = (station.brightCoords.x / 100) * mapWidth;
     const adjustedBrightY = (station.brightCoords.y / 100) * mapHeight;
-  
+
     // Create and position the bright image
     const brightImage = document.createElement('img');
     brightImage.src = `Images/Brighten/${station.brightImage}`;
@@ -1901,13 +1901,13 @@ function placeStationElements(stationKey, station) {
     brightImage.style.left = `${adjustedBrightX}px`;
     brightImage.style.top = `${adjustedBrightY}px`;
     brightImage.style.transform = 'translate(-50%, -50%)';
-  
+
     mapContainer.appendChild(brightImage);
-  
+
     // Debugging logs
     console.log(`Placing elements for station: ${stationKey}`);
 
-  
+
 
     // Clear the input field after processing
     const inputField = document.getElementById('stationInput');
@@ -1915,7 +1915,7 @@ function placeStationElements(stationKey, station) {
     console.log("Cleared the input field");
 }
 
-  
+
 
 
 
@@ -2054,15 +2054,15 @@ function triggerFlash(x, y, flashType) {
 
 
 
-  
 
 
 
 
 
-  
 
-  
+
+
+
 
 
 
@@ -2180,7 +2180,7 @@ function toggleTimer() {
 
 
 
-  
+
   // Toggle the state of the timer
   if (timerEnabled) {
     // Disable the timer
@@ -2219,11 +2219,11 @@ document.getElementById('timerToggleBtn').addEventListener('click', toggleTimer)
 
 document.addEventListener('DOMContentLoaded', () => {
   // Help button and related elements
-  const helpBtn = document.getElementById('helpBtn'); 
-  const helpBtnImg = document.getElementById('helpBtnImg'); 
-  const gameHelpBox = document.getElementById('gameHelpBox'); 
-  const gameHelpOkBtn = document.getElementById('gameHelpOkBtn'); 
-  const gameHelpOkImg = document.getElementById('gameHelpOkImg'); 
+  const helpBtn = document.getElementById('helpBtn');
+  const helpBtnImg = document.getElementById('helpBtnImg');
+  const gameHelpBox = document.getElementById('gameHelpBox');
+  const gameHelpOkBtn = document.getElementById('gameHelpOkBtn');
+  const gameHelpOkImg = document.getElementById('gameHelpOkImg');
 
   // Use the already preloaded sounds
   const openButtonSound = instructionsButtonSound; // Reuse instructionsButtonSound for the help button
@@ -2241,23 +2241,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Help button behavior
   helpBtn.addEventListener('mousedown', () => {
-    helpBtnImg.src = 'Images/UI/help_down.png'; 
+    helpBtnImg.src = 'Images/UI/help_down.png';
     openButtonSound.play(); // Play sound when help button is pressed
   });
 
   helpBtn.addEventListener('mouseup', () => {
-    helpBtnImg.src = 'Images/UI/help_up.png'; 
+    helpBtnImg.src = 'Images/UI/help_up.png';
     showElement(gameHelpBox); // Show the game help infobox
   });
 
   // OK button behavior (to close the help infobox)
   gameHelpOkBtn.addEventListener('mousedown', () => {
-    gameHelpOkImg.src = 'Images/UI/OK_button-02.png'; 
+    gameHelpOkImg.src = 'Images/UI/OK_button-02.png';
     selectButtonSound.play(); // Play sound when OK button is pressed
   });
 
   gameHelpOkBtn.addEventListener('mouseup', () => {
-    gameHelpOkImg.src = 'Images/UI/OK_button-01.png'; 
+    gameHelpOkImg.src = 'Images/UI/OK_button-01.png';
     hideElement(gameHelpBox); // Hide the game help infobox
   });
 });
@@ -2275,8 +2275,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const returnBtnImg = document.getElementById('returnBtnImg');
   const returnMenuBox = document.getElementById('returnMenuBox');
   const returnMenuBoxImg = document.getElementById('returnMenuBoxImg');  // Main image to swap
-  const returnOkBtn = document.getElementById('returnOkBtn');  
-  const returnCancelBtn = document.getElementById('returnCancelBtn'); 
+  const returnOkBtn = document.getElementById('returnOkBtn');
+  const returnCancelBtn = document.getElementById('returnCancelBtn');
 
   const openButtonSound = instructionsButtonSound;
   const selectButtonSound = selectSound;
@@ -2338,8 +2338,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealBtnImg = document.getElementById('revealBtnImg');
   const revealMenuBox = document.getElementById('revealMenuBox');
   const revealMenuBoxImg = document.getElementById('revealMenuBoxImg');  // Main image to swap
-  const revealOkBtn = document.getElementById('revealOkBtn');  
-  const revealCancelBtn = document.getElementById('revealCancelBtn'); 
+  const revealOkBtn = document.getElementById('revealOkBtn');
+  const revealCancelBtn = document.getElementById('revealCancelBtn');
 
   const openButtonSound = instructionsButtonSound;
   const selectButtonSound = selectSound;
@@ -2383,7 +2383,7 @@ document.addEventListener('DOMContentLoaded', () => {
       revealMenuBoxImg.src = 'Images/UI/reveal_menu_idle.png';
       hideElement(revealMenuBox);
     }, 1);
-    
+
     // Stop the timer when revealing all stations
     stopTimer();
 
@@ -2441,15 +2441,15 @@ function displayStationText(stationKey, station, color) {
 
   // Apply the specific label class for styling, including font size
   textElement.classList.add(station.labelClass);  // e.g., 'label-straight', 'label-rotated', or 'tc-label'
-  
+
   // Set color and z-index to ensure it appears above the map
   textElement.style.color = color;
   textElement.style.zIndex = '10'; // Higher z-index to appear above the map
-  
+
   textElement.style.position = "absolute";
   textElement.style.left = `${station.textCoords.x}%`;
   textElement.style.top = `${station.textCoords.y}%`;
-  
+
   // Append the text element to the map container
   const mapContainer = document.getElementById('mapContainer'); // Use the correct map container ID
   mapContainer.appendChild(textElement);
